@@ -1,6 +1,9 @@
-print("test")
-print("git_test")
+def main():
+    
 
-def sum(a,b):
-    sum = a + b
-print(sum(3,5))
+
+
+
+
+if __name__ =="__main__":
+    main()
