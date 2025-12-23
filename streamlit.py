@@ -80,18 +80,19 @@ selected_character = {
 }
 
 def character_select():
-
-    ㅊ
-    selected_prompt = selected_character[character_choice]
-    if st.sidebar.button("스타일 선택완료"):
+    character_choice = st.sidebar.radio(
+        "스타일 선택",
+        options = list(selected_character.keys()),
+        key = "selected_character_radio"
+    )
+    # selected_prompt = selected_character[character_choice]
+    if st.sidebar.button("캐틱터 선택"):
         st.session_state["character_choice"] = character_choice
     
     character_choice = st.session_state.get("character_choice")    
     if character_choice:
         selected_prompt_content = selected_character.get(character_choice,"")
         st.sidebar.write(f"당신이 선택한 캐릭터는 {character_choice}입니다.\n{selected_prompt_content}")
-        # # st.sidebar.button("스타일 선택완료")
-        # st.session_state["character_choice"] = character_choice
        
 def avatar_column():  
     with st.container():
